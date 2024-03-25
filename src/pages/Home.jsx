@@ -1,11 +1,11 @@
+import Hero from "../component/Hero";
 
 
 
 const Home = () => {
     return (
-        <div>
-        
-            <h1 className="text-7xl">Home Page</h1>
+        <div className="px-32 mt-12">
+            <Hero></Hero>
         </div>
     );
 };
