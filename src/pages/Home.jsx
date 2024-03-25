@@ -1,11 +1,11 @@
-import NavBar from "../component/NavBar";
+
 
 
 const Home = () => {
     return (
         <div>
-            <NavBar></NavBar>
-            
+        
+            <h1 className="text-7xl">Home Page</h1>
         </div>
     );
 };

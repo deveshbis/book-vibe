@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -17,10 +18,10 @@ const NavBar = () => {
                 <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li className="font-bold text-xl text-primary"><a>Home</a></li>
-                    <li className="font-bold text-xl "><a>Listed Books</a></li>
-                    <li className="font-bold text-xl "><a>Pages to Read</a></li>
+                <ul className="menu menu-horizontal px-1 gap-10">
+                    <Link to = '/' className="font-bold text-xl text-primary">Home</Link>
+                    <Link to = '/listedBooks' className="font-bold text-xl ">Listed Books</Link>
+                    <Link to = '/pagesToRead' className="font-bold text-xl ">Pages to Read</Link>
                 </ul>
             </div>
             <div className="navbar-end gap-3">
