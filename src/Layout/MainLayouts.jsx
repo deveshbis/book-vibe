@@ -1,7 +1,6 @@
+import { Outlet } from "react-router-dom";
 import NavBar from "../component/NavBar";
-import Home from "../pages/Home";
-import ListedBooks from "../pages/ListedBooks";
-import PagesToRead from "../pages/PagesToRead";
+
 
 
 const MainLayouts = () => {
@@ -10,9 +9,7 @@ const MainLayouts = () => {
             <div>
                 <NavBar></NavBar>
             </div>
-            <Home></Home>
-            <ListedBooks></ListedBooks>
-            <PagesToRead></PagesToRead>
+            <Outlet></Outlet>
         </div>
     );
 };

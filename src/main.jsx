@@ -8,20 +8,28 @@ import {
 import ListedBooks from './pages/ListedBooks';
 import PagesToRead from './pages/PagesToRead';
 import MainLayouts from './Layout/MainLayouts';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: "/listedBooks",
+        element: <ListedBooks></ListedBooks>,
+      },
+      {
+        path: "/pagesToRead",
+        element: <PagesToRead></PagesToRead>,
+      },
+    ]
   },
-  {
-    path: "/listedBooks",
-    element: <ListedBooks></ListedBooks>,
-  },
-  {
-    path: "/pagesToRead",
-    element: <PagesToRead></PagesToRead>,
-  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
