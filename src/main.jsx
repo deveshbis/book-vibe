@@ -9,6 +9,7 @@ import ListedBooks from './pages/ListedBooks';
 import PagesToRead from './pages/PagesToRead';
 import MainLayouts from './Layout/MainLayouts';
 import Home from './pages/Home';
+import Book from './pages/Book';
 
 const router = createBrowserRouter([
   {
@@ -18,12 +19,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("../public/books.json"),
-        
+        // loader: () => fetch("https://deveshbis.github.io/json-hosting/books.json"),
+
       },
       {
         path: "/listedBooks",
         element: <ListedBooks></ListedBooks>,
+      },
+      {
+        path: "/book/:bookId",
+        element: <Book></Book>,
+        // loader: ({params}) => fetch(`https://deveshbis.github.io/json-hosting/books.json/${params.bookId}`),
       },
       {
         path: "/pagesToRead",
@@ -31,7 +37,7 @@ const router = createBrowserRouter([
       },
     ]
   },
-  
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
