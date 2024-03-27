@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import {  ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useBookData from "../Hook/useBookData";
 import { saveToLocalStorage } from "../Utilities/localStored";
 
@@ -9,20 +11,16 @@ const Book = () => {
     const { bookId } = useParams();
     const { data, loading } = useBookData();
 
-
-    
-
     useEffect(() => {
         if (data) {
             const singleData = data.find(item => item.bookId == bookId);
             setSingleData(singleData);
-
         }
     }, [data, bookId]);
 
     const { image, bookName, author, category, rating, review, tags, totalPages, publisher, yearOfPublishing } = singleData || {};
 
-    const handleRead =() =>{
+    const handleRead = () => {
         saveToLocalStorage(singleData);
         
     }
@@ -35,29 +33,25 @@ const Book = () => {
                         <img src={image} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                     </div>
                     <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-                        <h1 className="text-5xl font-bold leading-none sm:text-6xl">{bookName}
-                        </h1>
-                        <p className="text-xl py-3">By : {author}</p>
+                        <h1 className="text-5xl font-bold leading-none sm:text-6xl">{bookName}</h1>
+                        <p className="text-xl py-3">By: {author}</p>
                         <hr className="border-dashed" />
                         <h3 className="text-xl py-3">{category}</h3>
                         <hr className="border-dashed" />
-                        <p className="mt-6 mb-8 text-lg  sm:mb-12 "> Review: <br /> <span className="text-sm">{review}</span>
-                        </p>
-                        <div>
+                        <p className="mt-6 mb-8 text-lg sm:mb-12">Review: <br /> <span className="text-sm">{review}</span></p>
+                        <div className="flex gap-5">
                             <h3 className="text-xl font-bold">Tags:</h3>
-                            {/* {
-                                tags.map(tag =>(
-                                    <a key={tag} className="px-3 py-1 rounded-sm hover:underline">
-                                        #{tag}
-                                    </a>
-                                ))
-                            } */}
+                            <div className="flex flex-wrap gap-2">
+                                {tags && tags.map((tag, index) => (
+                                    <span key={index} className="px-3 py-1 bg-gray-200 rounded-lg text-green-500">{tag}</span>
+                                ))}
+                            </div>
                         </div>
                         <hr className="border-dashed py-3" />
                         <div className="flex gap-10">
                             <div className="space-y-3">
                                 <h4 className="text-xs font-bold">Number of Pages:</h4>
-                                <h4 className="text-xs font-bold">publisher:</h4>
+                                <h4 className="text-xs font-bold">Publisher:</h4>
                                 <h4 className="text-xs font-bold">Year Of Publishing:</h4>
                                 <h4 className="text-xs font-bold">Rating: <span className="ml-10"></span> </h4>
                             </div>
@@ -67,18 +61,15 @@ const Book = () => {
                                 <h4 className="text-xs font-bold">{yearOfPublishing}</h4>
                                 <h4 className="text-xs font-bold">{rating} </h4>
                             </div>
-
                         </div>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start mt-5">
-                            <Link to='/listedBooks' ><button onClick={handleRead} className="bg-green-500 p-3 rounded-lg">Read</button></Link>
-                            <a rel="noopener noreferrer" href="#" ><button className="bg-green-500 p-3 rounded-lg">Wishlist</button></a>
+                            <button onClick={handleRead} className="bg-green-500 p-3 rounded-lg">Read</button>
+                            <a rel="noopener noreferrer" href="#"><button className="bg-green-500 p-3 rounded-lg">Wishlist</button></a>
                         </div>
                     </div>
                 </div>
             </section>
-            <h1>
-
-            </h1>
+            <ToastContainer position="top-right" />
         </div>
     );
 };

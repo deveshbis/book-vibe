@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const saveToLocalStorage = (data) => {
     const saveData = JSON.parse(localStorage.getItem("read") || "[]");
 
@@ -6,9 +8,9 @@ export const saveToLocalStorage = (data) => {
     if (existedData === undefined) {
         saveData.push(data);
         localStorage.setItem("read", JSON.stringify(saveData));
-        alert("Added Successfully");
+        toast.success("Added Successfully");
     } else {
-        alert("Already Added");
+        toast.warning("Already Added");
     }
 };
 
@@ -16,6 +18,5 @@ export const saveToLocalStorage = (data) => {
 
 export const getFromLocalStorage =() =>{
     const data = JSON.parse(localStorage.getItem("read") || "[]");
-    console.log("local:", data);
     return data;
 }

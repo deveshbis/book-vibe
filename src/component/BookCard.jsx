@@ -6,7 +6,7 @@ const BookCard = ({ item }) => {
     const { bookId, image,  bookName, author, category, rating } = item;
     return (
         <div>
-            <Link to={`/book/${bookId}`}className="block max-w-sm gap-3 mx-auto sm:max-w-full group transition border-2 p-2 hover:scale-105 border-opacity-30 border-primary hover:border-green-500 hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
+            <Link to={`/book/${bookId}`} className="block max-w-sm gap-3 mx-auto sm:max-w-full group transition border-2 p-2 hover:scale-105 border-opacity-30 border-primary hover:border-green-500 hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
                 <div className="card w-96 bg-base-100">
                     <figure><img src={image} alt="Loading Book" /></figure>
                     <div className="card-body">

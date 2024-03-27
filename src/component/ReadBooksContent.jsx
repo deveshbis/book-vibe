@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import UseLocalStorage from "../Hook/UseLocalStorage";
 
 const ReadBooksContent = () => {
@@ -21,7 +22,7 @@ const ReadBooksContent = () => {
                             <h2 className="text-2xl p-2">Tags:</h2>
                             <div className="flex gap-2 p-2">
                                 {data.tags.map((tag, index) => (
-                                    <span key={index} className="px-2 py-1 bg-gray-200 rounded-lg text-green-500">{tag}</span>
+                                    <span key={index} className="px-2 py-1 bg-gray-200 rounded-lg text-green-500">#{tag}</span>
                                 ))}
                             </div>
                             <div className="flex gap-5 p-2">
@@ -32,7 +33,9 @@ const ReadBooksContent = () => {
                             <div className=" flex items-center gap-5 p-2">
                                 <p className="">Category: {data.category}</p>
                                 <p className="">Rating: {data.rating}</p>
-                                <button className="btn btn-primary rounded-3xl">View Details</button>
+                                <Link to={`/book/${data.bookId}`}>
+                                    <button className="btn btn-primary rounded-3xl">View Details</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
