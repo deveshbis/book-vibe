@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import {  ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useBookData from "../Hook/useBookData";
-import { saveToLocalStorage } from "../Utilities/localStored";
+import { saveToLocalStorage, saveToLocalStorageInfo } from "../Utilities/localStored";
 
 
 const Book = () => {
@@ -22,6 +22,10 @@ const Book = () => {
 
     const handleRead = () => {
         saveToLocalStorage(singleData);
+        
+    }
+    const handleWishlist = () => {
+        saveToLocalStorageInfo(singleData);
         
     }
 
@@ -64,7 +68,7 @@ const Book = () => {
                         </div>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start mt-5">
                             <button onClick={handleRead} className="bg-green-500 p-3 rounded-lg">Read</button>
-                            <a rel="noopener noreferrer" href="#"><button className="bg-green-500 p-3 rounded-lg">Wishlist</button></a>
+                            <button onClick={handleWishlist} className="bg-green-500 p-3 rounded-lg">Wishlist</button>
                         </div>
                     </div>
                 </div>
