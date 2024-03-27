@@ -1,23 +1,43 @@
-
-
+import UseLocalStorage from "../Hook/UseLocalStorage";
 
 const ReadBooksContent = () => {
+    const { localData } = UseLocalStorage();
 
-    
-    
+    if (!localData) {
+        return <p>Loading...</p>;
+    }
+
     return (
         <div>
-            <h1>Read Books:</h1>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" />
-                    <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+            {localData.map((data) => (
+                <div key={data.bookId} className="border border-gray-300 rounded-md p-4 mb-4 mt-5">
+                    <div className="flex gap-5">
+                        <div className="bg-slate-300 p-16">
+                            <img src={data.image} alt="" />
+                        </div>
+                        <div>
+                            <h1 className="text-3xl p-2">{data.bookName}</h1>
+                            <h3 className="text-xl p-2">By: {data.author}</h3>
+                            <h2 className="text-2xl p-2">Tags:</h2>
+                            <div className="flex gap-2 p-2">
+                                {data.tags.map((tag, index) => (
+                                    <span key={index} className="px-2 py-1 bg-gray-200 rounded-lg text-green-500">{tag}</span>
+                                ))}
+                            </div>
+                            <div className="flex gap-5 p-2">
+                                <p className="text-xl p-2">Total Pages: {data.totalPages}</p>
+                                <p className="text-xl p-2">Publisher: {data.publisher}</p>
+                            </div>
+                            <hr className="p-3" />
+                            <div className=" flex items-center gap-5 p-2">
+                                <p className="">Category: {data.category}</p>
+                                <p className="">Rating: {data.rating}</p>
+                                <button className="btn btn-primary rounded-3xl">View Details</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            ))}
         </div>
     );
 };

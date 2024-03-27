@@ -14,3 +14,8 @@ export const saveToLocalStorage = (data) => {
 
 
 
+export const getFromLocalStorage =() =>{
+    const data = JSON.parse(localStorage.getItem("read") || "[]");
+    console.log("local:", data);
+    return data;
+}
