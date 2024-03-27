@@ -9,7 +9,7 @@ import { saveToLocalStorage, saveToLocalStorageInfo } from "../Utilities/localSt
 const Book = () => {
     const [singleData, setSingleData] = useState({});
     const { bookId } = useParams();
-    const { data, loading } = useBookData();
+    const { data } = useBookData();
 
     useEffect(() => {
         if (data) {
@@ -77,5 +77,4 @@ const Book = () => {
         </div>
     );
 };
-
 export default Book;

@@ -22,6 +22,8 @@ const NavBar = () => {
                     <NavLink to = '/' className={({isActive}) => isActive ? 'font-bold text-primary text-2xl' : 'font-bold text-2xl'}>Home</NavLink>
                     <NavLink to = '/listedBooks' className={({isActive}) => isActive ? 'font-bold text-primary text-2xl' : 'font-bold text-2xl'}>Listed Books</NavLink>
                     <NavLink to = '/pagesToRead' className={({isActive}) => isActive ? 'font-bold text-primary text-2xl' : 'font-bold text-2xl'}>Pages to Read</NavLink>
+                    <NavLink to = '/ebook' className={({isActive}) => isActive ? 'font-bold text-primary text-2xl' : 'font-bold text-2xl'}>E-Book</NavLink>
+                    <NavLink to = '/kids' className={({isActive}) => isActive ? 'font-bold text-primary text-2xl' : 'font-bold text-2xl'}>KIds Books</NavLink>
                 </ul>
             </div>
             <div className="navbar-end gap-3">

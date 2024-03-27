@@ -6,6 +6,8 @@ import Book from "../pages/Book";
 import PagesToRead from "../pages/PagesToRead";
 import ReadBooksContent from "../component/ReadBooksContent";
 import Wishlist from "../component/Wishlist";
+import Ebook from "../pages/Ebook";
+import KidsBook from "../pages/KidsBook";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +44,14 @@ export const router = createBrowserRouter([
             {
                 path: "/pagesToRead",
                 element: <PagesToRead></PagesToRead>,
+            },
+            {
+                path: "/ebook",
+                element: <Ebook></Ebook>,
+            },
+            {
+                path: "/kids",
+                element: <KidsBook></KidsBook>,
             },
         ]
     },
