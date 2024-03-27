@@ -14,7 +14,7 @@
     },
     {
       "bookId": 2,
-      "bookName": "1984",
+      "bookName": "1984 Book",
       "author": "George Orwell",
       "image": "https://i.ibb.co/b6pPn3z/book2.png",
       "review": "To Kill a Mockingbird, written by Harper Lee, is a powerful and poignant novel that explores themes of racism, injustice, and morality in the American South during the 1930s. Through the eyes of young Scout Finch, the reader witnesses the trial of Tom Robinson, a black man falsely accused of raping a white woman, and the moral courage of her father, Atticus Finch, who defends him. Lee's masterful storytelling and vivid characters bring the small town of Maycomb, Alabama, to life, drawing readers into a world of prejudice, compassion, and humanity. With its timeless message of empathy and understanding, To Kill a Mockingbird continues to resonate with readers of all ages.",
@@ -57,7 +57,7 @@
       "author": "Douglas Adams",
       "image": "https://i.ibb.co/fCxvnP6/book5.png",
       "review": "Pride and Prejudice, written by Jane Austen, is a classic novel that explores themes of love, marriage, and social class in 19th-century England. Through the lively and intelligent protagonist, Elizabeth Bennet, Austen offers a witty and incisive commentary on the societal expectations and gender roles of the time.",
-      "totalPages": 224,
+      "totalPages": 200,
       "rating": 4.6,
       "category": "Science Fiction",
       "tags": ["Humor", "Adventure"],

@@ -8,7 +8,7 @@ const KidsBook = () => {
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img src={kids1} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
+                    <h2 className="card-title">After a Swim by Idries Shah</h2>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">Watch</button>
@@ -18,7 +18,7 @@ const KidsBook = () => {
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img src={kids2} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
+                    <h2 className="card-title">Speak First and Lose by Idries Shah</h2>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">Watch</button>
@@ -28,7 +28,7 @@ const KidsBook = () => {
             <div className="card card-side bg-base-100 shadow-xl">
                 <figure><img src={kids3} alt="Movie" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
+                    <h2 className="card-title">The Ants and the Pen by Idries Shah</h2>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">Watch</button>
