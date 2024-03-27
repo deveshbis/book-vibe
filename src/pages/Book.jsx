@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useBookData from "../Hook/useBookData";
+import { saveToLocalStorage } from "../Utilities/localStored";
+
 
 const Book = () => {
     const [singleData, setSingleData] = useState({});
@@ -8,18 +10,22 @@ const Book = () => {
     const { data, loading } = useBookData();
 
 
-    console.log(bookId, singleData);
+    
 
     useEffect(() => {
         if (data) {
             const singleData = data.find(item => item.bookId == bookId);
-            console.log(singleData);
             setSingleData(singleData);
 
         }
     }, [data, bookId]);
 
     const { image, bookName, author, category, rating, review, tags, totalPages, publisher, yearOfPublishing } = singleData || {};
+
+    const handleRead =() =>{
+        saveToLocalStorage(singleData);
+        
+    }
 
     return (
         <div className="mt-12 px-32">
@@ -64,7 +70,7 @@ const Book = () => {
 
                         </div>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start mt-5">
-                            <Link to='/listedBooks' ><button className="bg-green-500 p-3 rounded-lg">Read</button></Link>
+                            <Link to='/listedBooks' ><button onClick={handleRead} className="bg-green-500 p-3 rounded-lg">Read</button></Link>
                             <a rel="noopener noreferrer" href="#" ><button className="bg-green-500 p-3 rounded-lg">Wishlist</button></a>
                         </div>
                     </div>
