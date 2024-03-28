@@ -8,7 +8,7 @@ const BookCard = ({ item }) => {
         <div className="flex relative">
             <Link to={`/book/${bookId}`} className="max-w-sm mx-auto group hover:no-underline focus:no-underline transition border-2 hover:scale-105 border-primary hover:border-secondary border-opacity-30 ">
                 <div className="card w-96 bg-base-100">
-                    <figure><img className="object-cover w-full rounde" src={image} alt="Loading Book" /></figure>
+                    <figure><img className="" src={image} alt="Loading Book" /></figure>
                     <div className="card-body">
                         <div className="card-actions">
                             <div className="flex flex-wrap gap-2">
