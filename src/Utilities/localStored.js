@@ -8,7 +8,7 @@ export const saveToLocalStorage = (data) => {
     if (existedData === undefined) {
         saveData.push(data);
         localStorage.setItem("read", JSON.stringify(saveData));
-        toast.success("Added Successfully");
+        toast.success("Add Read Book list Successfully");
     } else {
         toast.warning("Already Added");
     }
@@ -32,7 +32,7 @@ export const saveToLocalStorageInfo = (info) => {
     if (existedData === undefined) {
         saveData2.push(info);
         localStorage.setItem("wish", JSON.stringify(saveData2));
-        toast.success("Added Successfully");
+        toast.success("Add WishList list Successfully");
     } else {
         toast.warning("Already Added");
     }

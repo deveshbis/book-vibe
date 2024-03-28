@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css';
 import useBookData from "../Hook/useBookData";
 import { saveToLocalStorage, saveToLocalStorageInfo } from "../Utilities/localStored";
-
 
 const Book = () => {
     const [singleData, setSingleData] = useState({});
@@ -20,13 +19,44 @@ const Book = () => {
 
     const { image, bookName, author, category, rating, review, tags, totalPages, publisher, yearOfPublishing } = singleData || {};
 
+    const [readClicked, setReadClicked] = useState(false);
+    const [addedToWishlist, setAddedToWishlist] = useState(false); 
+
     const handleRead = () => {
-        saveToLocalStorage(singleData);
-
+        if (!readClicked) {
+            saveToLocalStorage(singleData);
+            setReadClicked(true);
+        }
+        else {
+            
+            toast.error('This book is already added Read Book Tab.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     }
-    const handleWishlist = () => {
-        saveToLocalStorageInfo(singleData);
 
+    const handleWishlist = () => {
+        if (!readClicked && !addedToWishlist) { 
+            saveToLocalStorageInfo(singleData);
+            setAddedToWishlist(true);
+        } else {
+            
+            toast.error('This book is already added Read Book Tab.', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     }
 
     const [spinner, setSpinner] = useState(true);
@@ -56,7 +86,7 @@ const Book = () => {
                             <h3 className="text-xl py-3">{category}</h3>
                             <hr className="border-dashed" />
                             <p className="mt-6 mb-8 text-lg sm:mb-12">Review: <br /> <span className="text-sm">{review}</span></p>
-                            <div className="flex gap-5">
+                            <div className="flex gap-5 mb-5">
                                 <h3 className="text-xl font-bold">Tags:</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {tags && tags.map((tag, index) => (
@@ -67,30 +97,29 @@ const Book = () => {
                             <hr className="border-dashed py-3" />
                             <div className="flex gap-10">
                                 <div className="space-y-3">
-                                    <h4 className="text-xs font-bold">Number of Pages:</h4>
-                                    <h4 className="text-xs font-bold">Publisher:</h4>
-                                    <h4 className="text-xs font-bold">Year Of Publishing:</h4>
-                                    <h4 className="text-xs font-bold">Rating: <span className="ml-10"></span> </h4>
+                                    <h4 className="text-xl font-bold">Number of Pages:</h4>
+                                    <h4 className="text-xl font-bold">Publisher:</h4>
+                                    <h4 className="text-xl font-bold">Year Of Publishing:</h4>
+                                    <h4 className="text-xl font-bold">Rating: <span className="ml-10"></span> </h4>
                                 </div>
                                 <div className="space-y-3">
-                                    <h4 className="text-xs font-bold">{totalPages}</h4>
-                                    <h4 className="text-xs font-bold">{publisher}</h4>
-                                    <h4 className="text-xs font-bold">{yearOfPublishing}</h4>
-                                    <h4 className="text-xs font-bold">{rating} </h4>
+                                    <h4 className="text-xl font-bold">{totalPages}</h4>
+                                    <h4 className="text-xl font-bold">{publisher}</h4>
+                                    <h4 className="text-xl font-bold">{yearOfPublishing}</h4>
+                                    <h4 className="text-xl font-bold">{rating} </h4>
                                 </div>
                             </div>
                             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start mt-5">
-                                <button onClick={handleRead} className="bg-green-500 p-3 rounded-lg">Read</button>
-                                <button onClick={handleWishlist} className="bg-green-500 p-3 rounded-lg">Wishlist</button>
+                                <button onClick={handleRead} className="bg-green-500 p-3 rounded-lg text-white font-bold">Read</button>
+                                <button onClick={handleWishlist} className={`bg-green-500 p-3 rounded-lg text-white font-bold ${readClicked && ''}`}>Wishlist</button>
                             </div>
                         </div>
                     </div>
-
                 </section>
             }
             <ToastContainer position="top-right" />
-
         </div>
     );
 };
+
 export default Book;

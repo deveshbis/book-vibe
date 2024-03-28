@@ -6,7 +6,10 @@ import UseLocalStorageInfo from "../Hook/UseLocalStorageInfo";
 const Wishlist = () => {
 
     const {localInfo} = UseLocalStorageInfo();
-    console.log(localInfo);
+    
+    if (!localInfo) {
+        return <p>Loading...</p>;
+    }
     return (
         <div>
             {localInfo.map((data) => (

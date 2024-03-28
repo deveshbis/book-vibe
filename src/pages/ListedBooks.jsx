@@ -9,12 +9,12 @@ const ListedBooks = () => {
         <div className="px-32 mt-5">
             <h1 className="text-3xl text-center bg-gray-200 p-3"> Books</h1>
             <div className="dropdown dropdown-bottom mt-5 flex justify-center">
-                <div tabIndex={0} role="button" className="btn m-1">Sort By</div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Rating</a></li>
-                    <li><a>Total Pages</a></li>
-                    <li><a>Year of Publishing</a></li>
-                </ul>
+            <select className="bg-slate-300 p-3 text-xl rounded-xl">
+                <option value="">Sort By</option>
+                <option value="rating">Rating</option>
+                <option value="totalPages">Total Pages</option>
+                <option value="yearOfPublishing">Year of Publishing</option>
+            </select>
             </div>
             <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 mt-5">
                 <Link onClick={() => setTabIndex(0)}

@@ -26,7 +26,7 @@ const Ebook = () => {
                     Grab their attention
                         <div className="badge badge-secondary">INTERESTING</div>
                     </h2>
-                    <p>When an ebook title resonates with someone or they can see themselves benefiting from the information, they’re more likely to download the content. This is why your ebook title should use words that make people feel inspired, excited or motivated.</p>
+                    <p>When an ebook title resonates with someone or they can see themselves benefiting from the information, they are more likely to download the content. This is why your ebook title should use words that make people feel inspired, excited or motivated.</p>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">Brainstorm</div>
                         <div className="badge badge-outline">impression</div>
