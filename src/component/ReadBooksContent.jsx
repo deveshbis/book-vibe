@@ -28,6 +28,7 @@ const ReadBooksContent = () => {
                             <div className="flex gap-5 p-2">
                                 <p className="text-xl p-2">Total Pages: {data.totalPages}</p>
                                 <p className="text-xl p-2">Publisher: {data.publisher}</p>
+                                <p className="text-xl p-2">Published Year: {data.yearOfPublishing}</p>
                             </div>
                             <hr className="p-3" />
                             <div className=" flex items-center gap-5 p-2">
@@ -46,3 +47,47 @@ const ReadBooksContent = () => {
 };
 
 export default ReadBooksContent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -47,7 +47,7 @@ const Book = () => {
             setAddedToWishlist(true);
         } else {
             
-            toast.error('This book is already added Read Book Tab.', {
+            toast.error('This book is already added WishList Tab.', {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,

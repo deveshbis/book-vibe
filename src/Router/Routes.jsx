@@ -8,11 +8,13 @@ import ReadBooksContent from "../component/ReadBooksContent";
 import Wishlist from "../component/Wishlist";
 import Ebook from "../pages/Ebook";
 import KidsBook from "../pages/KidsBook";
+import ErrorPage from "../component/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayouts></MainLayouts>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
