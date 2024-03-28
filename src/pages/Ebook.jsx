@@ -4,7 +4,7 @@ import ebook4 from '../assets/ebook4.jpg'
 
 const Ebook = () => {
     return (
-        <div className='grid grid-cols-3 gap-1 px-32'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-1 lg:px-32'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={ebook1} alt="Shoes" /></figure>
                 <div className="card-body">

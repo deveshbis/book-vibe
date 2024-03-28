@@ -15,7 +15,7 @@ const Wishlist = () => {
             {localInfo.map((data) => (
                 <div key={data.bookId} className="border border-gray-300 rounded-md p-4 mb-4 mt-5">
                     <div className="flex gap-5">
-                        <div className="bg-slate-300 p-16">
+                        <div className="lg:bg-slate-300 lg:p-16">
                             <img src={data.image} alt="" />
                         </div>
                         <div>

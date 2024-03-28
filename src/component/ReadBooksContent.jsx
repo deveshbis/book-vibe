@@ -10,11 +10,12 @@ const ReadBooksContent = () => {
 
     return (
         <div>
+            <div>
             {localData.map((data) => (
                 <div key={data.bookId} className="border border-gray-300 rounded-md p-4 mb-4 mt-5">
                     <div className="flex gap-5">
-                        <div className="bg-slate-300 p-16">
-                            <img src={data.image} alt="" />
+                        <div className="lg:bg-slate-300 lg:p-16">
+                            <img className="" src={data.image} alt="" />
                         </div>
                         <div>
                             <h1 className="text-3xl p-2">{data.bookName}</h1>
@@ -28,7 +29,6 @@ const ReadBooksContent = () => {
                             <div className="flex gap-5 p-2">
                                 <p className="text-xl p-2">Total Pages: {data.totalPages}</p>
                                 <p className="text-xl p-2">Publisher: {data.publisher}</p>
-                                <p className="text-xl p-2">Published Year: {data.yearOfPublishing}</p>
                             </div>
                             <hr className="p-3" />
                             <div className=" flex items-center gap-5 p-2">
@@ -42,6 +42,7 @@ const ReadBooksContent = () => {
                     </div>
                 </div>
             ))}
+        </div>
         </div>
     );
 };

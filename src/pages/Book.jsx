@@ -68,14 +68,14 @@ const Book = () => {
     }, []);
 
     return (
-        <div className="mt-12 px-32">
+        <div className="mt-12 lg:px-32">
             {spinner ? (
                 <div className="flex justify-center items-center h-32">
                     <span className="loading loading-dots loading-lg"></span>
                 </div>
             ) :
                 <section className="dark:bg-gray-100 ">
-                    <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+                    <div className="mx-auto group hover:no-underline focus:no-underline border  border-opacity-30 p-2">
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                             <img src={image} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                         </div>

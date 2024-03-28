@@ -6,7 +6,7 @@ const ListedBooks = () => {
     const [tabIndex, setTabIndex] = useState(0);
 
     return (
-        <div className="px-32 mt-5">
+        <div className="lg:px-32 mt-5 grid grid-cols-1">
             <h1 className="text-3xl text-center bg-gray-200 p-3"> Books</h1>
             <div className="dropdown dropdown-bottom mt-5 flex justify-center">
                 <select className="bg-slate-300 p-3 text-xl rounded-xl">
